@@ -713,7 +713,7 @@
     aspect-ratio: 3/4;
     object-fit: cover;
     object-position: center top;
-    filter: contrast(1.03);
+    filter: contrast(1.04) saturate(1.04) sepia(0.08);
   }
   .principal__content {}
   .principal__name {
