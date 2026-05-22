@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Editor / IDE noise
+.vscode/
+*.swp
+*~
+
+# Vercel CLI state (local only)
+.vercel/
+
+# Local env files
+.env
+.env*.local
+
+# Design source masters — keep web-optimized versions in the repo, not the raw masters
+assets/images/JC' headshots.png
