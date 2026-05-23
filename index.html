@@ -1973,12 +1973,12 @@
       <div class="consult-form__fields">
         <div class="consult-form__row">
           <div class="consult-form__group">
-            <label class="consult-form__label" for="cf-firstname">First Name</label>
-            <input class="consult-form__input" type="text" id="cf-firstname" placeholder="First name">
+            <label class="consult-form__label" for="cf-firstname">First Name<span class="consult-form__required" aria-hidden="true">*</span></label>
+            <input class="consult-form__input" type="text" id="cf-firstname" placeholder="First name" autocomplete="given-name" required>
           </div>
           <div class="consult-form__group">
-            <label class="consult-form__label" for="cf-lastname">Last Name</label>
-            <input class="consult-form__input" type="text" id="cf-lastname" placeholder="Last name">
+            <label class="consult-form__label" for="cf-lastname">Last Name<span class="consult-form__required" aria-hidden="true">*</span></label>
+            <input class="consult-form__input" type="text" id="cf-lastname" placeholder="Last name" autocomplete="family-name" required>
           </div>
         </div>
         <div class="consult-form__row">
@@ -1987,14 +1987,14 @@
             <input class="consult-form__input" type="text" id="cf-title" placeholder="CEO, Acme Corp">
           </div>
           <div class="consult-form__group">
-            <label class="consult-form__label" for="cf-email">Email Address</label>
-            <input class="consult-form__input" type="email" id="cf-email" placeholder="you@organization.com">
+            <label class="consult-form__label" for="cf-email">Email Address<span class="consult-form__required" aria-hidden="true">*</span></label>
+            <input class="consult-form__input" type="email" id="cf-email" placeholder="you@organization.com" autocomplete="email" required>
           </div>
         </div>
         <div class="consult-form__row">
           <div class="consult-form__group">
-            <label class="consult-form__label" for="cf-phone">Phone (optional)</label>
-            <input class="consult-form__input" type="tel" id="cf-phone" placeholder="(000) 000-0000">
+            <label class="consult-form__label" for="cf-phone">Phone<span class="consult-form__required" aria-hidden="true">*</span></label>
+            <input class="consult-form__input" type="tel" id="cf-phone" placeholder="(000) 000-0000" autocomplete="tel" required>
           </div>
           <div class="consult-form__group">
             <!-- spacer -->
@@ -2172,10 +2172,12 @@
     const firstName = document.getElementById('cf-firstname').value.trim();
     const lastName = document.getElementById('cf-lastname').value.trim();
     const email = document.getElementById('cf-email').value.trim();
-    const hasError = !firstName || !lastName || !email;
+    const phone = document.getElementById('cf-phone').value.trim();
+    const hasError = !firstName || !lastName || !email || !phone;
     document.getElementById('cf-firstname').style.borderColor = firstName ? '' : 'rgba(184,100,80,0.6)';
     document.getElementById('cf-lastname').style.borderColor = lastName ? '' : 'rgba(184,100,80,0.6)';
     document.getElementById('cf-email').style.borderColor = email ? '' : 'rgba(184,100,80,0.6)';
+    document.getElementById('cf-phone').style.borderColor = phone ? '' : 'rgba(184,100,80,0.6)';
     if (hasError) return;
     const fullName = `${firstName} ${lastName}`;
     const mailto = `mailto:info@thescalableleader.net?subject=Inquiry — ${encodeURIComponent(fullName)}&body=First Name: ${encodeURIComponent(firstName)}%0ALast Name: ${encodeURIComponent(lastName)}%0ATitle %26 Organization: ${encodeURIComponent(document.getElementById('cf-title').value)}%0APhone: ${encodeURIComponent(document.getElementById('cf-phone').value)}%0AEmail: ${encodeURIComponent(email)}%0A%0AChallenge:%0A${encodeURIComponent(document.getElementById('cf-challenge').value)}`;
