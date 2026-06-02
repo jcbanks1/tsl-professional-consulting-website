@@ -1926,9 +1926,15 @@
         <p class="consult-modal__heading" id="cm-heading">Request a Consultation</p>
         <p class="consult-modal__sub">A brief introduction, and we will be in touch within one business day.</p>
         <form class="consult-form" id="consultModalForm" novalidate>
-          <div class="consult-form__group consult-form__group--full">
-            <label class="consult-form__label" for="cm-fullname">Full Name<span class="consult-form__required" aria-hidden="true">*</span></label>
-            <input class="consult-form__input" type="text" id="cm-fullname" autocomplete="name" required>
+          <div class="consult-form__row">
+            <div class="consult-form__group">
+              <label class="consult-form__label" for="cm-firstname">First Name<span class="consult-form__required" aria-hidden="true">*</span></label>
+              <input class="consult-form__input" type="text" id="cm-firstname" autocomplete="given-name" required>
+            </div>
+            <div class="consult-form__group">
+              <label class="consult-form__label" for="cm-lastname">Last Name<span class="consult-form__required" aria-hidden="true">*</span></label>
+              <input class="consult-form__input" type="text" id="cm-lastname" autocomplete="family-name" required>
+            </div>
           </div>
           <div class="consult-form__row">
             <div class="consult-form__group">
@@ -2209,7 +2215,7 @@
     m.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     setTimeout(() => {
-      const f = document.getElementById('cm-fullname');
+      const f = document.getElementById('cm-firstname');
       if (f) f.focus();
     }, 60);
   }
@@ -2239,13 +2245,14 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       hideError();
-      const fullName        = document.getElementById('cm-fullname').value.trim();
+      const firstName       = document.getElementById('cm-firstname').value.trim();
+      const lastName        = document.getElementById('cm-lastname').value.trim();
       const phone           = document.getElementById('cm-phone').value.trim();
       const email           = document.getElementById('cm-email').value.trim();
       const companyName     = document.getElementById('cm-company').value.trim();
       const companyLocation = document.getElementById('cm-location').value.trim();
 
-      if (!fullName || !phone || !email || !companyName || !companyLocation) {
+      if (!firstName || !lastName || !phone || !email || !companyName || !companyLocation) {
         showError('Please complete every field.');
         return;
       }
@@ -2254,9 +2261,7 @@
         return;
       }
 
-      const parts = fullName.split(/\s+/);
-      const lastName  = parts.length > 1 ? parts.pop() : '';
-      const firstName = parts.join(' ') || fullName;
+      const fullName = `${firstName} ${lastName}`;
 
       const payload = {
         fullName, firstName, lastName,
