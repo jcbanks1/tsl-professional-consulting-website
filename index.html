@@ -1179,6 +1179,22 @@
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+  .consult-form__error {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: #d68a8a;
+    background: rgba(184,80,80,0.08);
+    border-left: 2px solid rgba(184,80,80,0.6);
+    padding: 0.8rem 1rem;
+    margin-top: 0.8rem;
+    line-height: 1.6;
+  }
+  .consult-form__error a {
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .consult-modal .consult-form {
     margin-top: 0;
     padding: 0;
@@ -1948,7 +1964,7 @@
           </div>
           <div class="consult-form__row">
             <div class="consult-form__group">
-              <label class="consult-form__label" for="cm-company">Company Name<span class="consult-form__required" aria-hidden="true">*</span></label>
+              <label class="consult-form__label" for="cm-company">Business Name<span class="consult-form__required" aria-hidden="true">*</span></label>
               <input class="consult-form__input" type="text" id="cm-company" autocomplete="organization" required>
             </div>
             <div class="consult-form__group">
@@ -2014,6 +2030,7 @@
           <button class="btn-primary consult-form__submit" onclick="handleConsultSubmit(event)">Send Inquiry</button>
           <p class="consult-form__note">Confidential. We respond within one business day.</p>
         </div>
+        <p id="cf-error" class="consult-form__error" hidden></p>
         <div class="consult-form__success" id="cf-success">
           <p class="consult-form__success-text"><em>Your inquiry has been received.</em> We will be in touch within one business day.</p>
         </div>
@@ -2172,23 +2189,62 @@
     });
   });
 
-  // Consultation form
-  function handleConsultSubmit(e) {
+  // Inline inquiry form
+  async function handleConsultSubmit(e) {
     e.preventDefault();
+    const btn = e.currentTarget;
     const firstName = document.getElementById('cf-firstname').value.trim();
-    const lastName = document.getElementById('cf-lastname').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const phone = document.getElementById('cf-phone').value.trim();
-    const hasError = !firstName || !lastName || !email || !phone;
+    const lastName  = document.getElementById('cf-lastname').value.trim();
+    const email     = document.getElementById('cf-email').value.trim();
+    const phone     = document.getElementById('cf-phone').value.trim();
+
     document.getElementById('cf-firstname').style.borderColor = firstName ? '' : 'rgba(184,100,80,0.6)';
-    document.getElementById('cf-lastname').style.borderColor = lastName ? '' : 'rgba(184,100,80,0.6)';
-    document.getElementById('cf-email').style.borderColor = email ? '' : 'rgba(184,100,80,0.6)';
-    document.getElementById('cf-phone').style.borderColor = phone ? '' : 'rgba(184,100,80,0.6)';
-    if (hasError) return;
-    const fullName = `${firstName} ${lastName}`;
-    const mailto = `mailto:info@thescalableleader.net?subject=Inquiry — ${encodeURIComponent(fullName)}&body=First Name: ${encodeURIComponent(firstName)}%0ALast Name: ${encodeURIComponent(lastName)}%0ATitle %26 Organization: ${encodeURIComponent(document.getElementById('cf-title').value)}%0APhone: ${encodeURIComponent(document.getElementById('cf-phone').value)}%0AEmail: ${encodeURIComponent(email)}%0A%0AChallenge:%0A${encodeURIComponent(document.getElementById('cf-challenge').value)}`;
-    window.location.href = mailto;
-    document.getElementById('cf-success').classList.add('visible');
+    document.getElementById('cf-lastname').style.borderColor  = lastName  ? '' : 'rgba(184,100,80,0.6)';
+    document.getElementById('cf-email').style.borderColor     = email     ? '' : 'rgba(184,100,80,0.6)';
+    document.getElementById('cf-phone').style.borderColor     = phone     ? '' : 'rgba(184,100,80,0.6)';
+    if (!firstName || !lastName || !email || !phone) return;
+
+    const errEl = document.getElementById('cf-error');
+    if (errEl) { errEl.hidden = true; errEl.textContent = ''; }
+
+    const payload = {
+      fullName: `${firstName} ${lastName}`, firstName, lastName,
+      phone, email,
+      titleOrganization: document.getElementById('cf-title').value.trim(),
+      message: document.getElementById('cf-challenge').value.trim(),
+      tag: 'Website Inquiry',
+      source: 'index.html#inquiry-form',
+      submittedAt: new Date().toISOString(),
+      pageUrl: window.location.href,
+      userAgent: navigator.userAgent
+    };
+
+    btn.disabled = true;
+    const originalLabel = btn.textContent;
+    btn.textContent = 'Sending…';
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), CONSULT_REQUEST_TIMEOUT_MS);
+    try {
+      const res = await fetch(GHL_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      clearTimeout(timer);
+      if (!res.ok) throw new Error('Webhook returned ' + res.status);
+      document.getElementById('cf-success').classList.add('visible');
+      btn.closest('form')?.reset();
+    } catch (err) {
+      clearTimeout(timer);
+      if (errEl) {
+        errEl.innerHTML = 'Submission did not go through. Please try again, or email <a href="mailto:info@thescalableleader.net">info@thescalableleader.net</a>.';
+        errEl.hidden = false;
+      }
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
   }
 
   // Scroll reveal
