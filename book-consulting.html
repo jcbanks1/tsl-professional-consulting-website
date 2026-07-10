@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Reserve a private, one-hour consultation with the principal of The Scalable Leader™.">
+<meta name="theme-color" content="#0B1520">
+<title>Book a Consultation — The Scalable Leader™</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav__logo">
+    <img class="nav__logo-img" src="assets/logos/scalable-leader-logo.png" alt="The Scalable Leader™ Consulting">
+  </a>
+  <ul class="nav__links">
+    <li><a href="index.html#forwhom">For Whom</a></li>
+    <li><a href="index.html#practice">The Practice</a></li>
+    <li><a href="index.html#framework">The Framework</a></li>
+    <li><a href="index.html#principal">The Principal</a></li>
+    <li><a href="index.html#words">In Their Words</a></li>
+    <li><a href="index.html#questions">Questions</a></li>
+    <li><a href="index.html#intro" class="nav__cta">Request a Consultation</a></li>
+  </ul>
+  <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Click-away backdrop -->
+<div class="nav__backdrop" id="navBackdrop"></div>
+
+<!-- Dropdown Mobile Nav -->
+<div class="nav__mobile" id="mobileNav">
+  <a href="index.html#forwhom" onclick="closeMobileNav()">For Whom</a>
+  <a href="index.html#practice" onclick="closeMobileNav()">The Practice</a>
+  <a href="index.html#framework" onclick="closeMobileNav()">The Framework</a>
+  <a href="index.html#principal" onclick="closeMobileNav()">The Principal</a>
+  <a href="index.html#words" onclick="closeMobileNav()">In Their Words</a>
+  <a href="index.html#questions" onclick="closeMobileNav()">Questions</a>
+  <a href="index.html#intro" onclick="closeMobileNav()" class="nav__mobile-cta">Request a Consultation →</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container--narrow">
+    <span class="section-eyebrow reveal">Private Session</span>
+    <h1 class="page-hero__title reveal reveal-delay-1">Reserve your<br><em>private consultation.</em></h1>
+    <p class="page-hero__intro reveal reveal-delay-2">A one-hour, confidential working session with the principal. Select a time below — your session is held the moment your reservation is confirmed.</p>
+  </div>
+</section>
+
+<section class="booking">
+  <div class="container--narrow">
+    <div class="booking__frame reveal">
+      <div class="booking__skeleton" id="bookingSkeleton" aria-hidden="true">
+        <span class="booking__skeleton-label">Preparing your calendar…</span>
+      </div>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/booking/7sKRegEZuhTSQhKlX7Ri"
+        class="booking__iframe"
+        scrolling="no"
+        id="tslConsultingBooking"
+        title="Book a private consultation"
+        onload="document.getElementById('bookingSkeleton').classList.add('is-hidden')"
+      ></iframe>
+    </div>
+    <p class="booking__note">Times are shown in your local timezone. Should nothing suit your schedule, write to <a href="mailto:info@thescalableleader.net">info@thescalableleader.net</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="assets/logos/scalable-leader-logo.png" alt="The Scalable Leader™ Consulting">
+        <p class="footer__tagline" style="margin-top:1.2rem">A private consulting and advisory practice for founders and chief executives at the inflection between operating a business and stewarding an enterprise.</p>
+      </div>
+      <div>
+        <p class="footer__col-label">Practice</p>
+        <ul class="footer__links">
+          <li><a href="index.html#practice">The Practice</a></li>
+          <li><a href="index.html#framework">The Framework</a></li>
+          <li><a href="index.html#forwhom">For Whom</a></li>
+          <li><a href="index.html#principal">The Principal</a></li>
+          <li><a href="index.html#words">In Their Words</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-label">Correspondence</p>
+        <ul class="footer__links">
+          <li><a href="tel:+14693312328">(469) 331-2328</a></li>
+          <li><a href="mailto:info@thescalableleader.net">info@thescalableleader.net</a></li>
+          <li><a href="index.html#intro">Request a Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-label">Company</p>
+        <ul class="footer__links">
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-label">Offices</p>
+        <address class="footer__address">
+          6675 S Custer Rd.<br>
+          Ste 500 PMB 6000<br>
+          McKinney, Texas 75070
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 · The Scalable Leader™ Consulting · All Rights Reserved</p>
+      <p class="footer__disclaimer">The Scalable Leader™ provides strategic consulting and advisory services. This practice does not provide legal, tax, investment, or financial advisory services. All results referenced are illustrative. Individual outcomes vary based on organizational context and principal engagement. Confidentiality is maintained absolutely across all engagements.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js" defer></script>
+</body>
+</html>

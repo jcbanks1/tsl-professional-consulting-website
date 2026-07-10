@@ -1618,3 +1618,68 @@
     transition: color var(--transition);
   }
   .contact-form__feedback a:hover { color: var(--gold); }
+
+  /* ─── BOOKING PAGE ───────────────────────────── */
+  .booking {
+    background: var(--ink);
+    padding: 4.5rem 0 8rem;
+  }
+  .booking > .container--narrow { max-width: 1100px; }
+  .booking__frame {
+    position: relative;
+    border: 1px solid var(--rule);
+    background: #05030D; /* must equal the GHL widget's configured background */
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    overflow: hidden;
+  }
+  .booking__iframe {
+    display: block;
+    width: 100%;
+    min-height: 830px;
+    margin-top: -70px; /* crops the widget's own empty top band inside the iframe */
+    border: none;
+    overflow: hidden;
+  }
+  .booking__skeleton {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #05030D; /* must equal the GHL widget's configured background */
+    z-index: 1;
+    transition: opacity 0.6s ease;
+  }
+  .booking__skeleton.is-hidden { opacity: 0; pointer-events: none; }
+  .booking__skeleton-label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    animation: booking-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes booking-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+  .booking__note {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--mist);
+    text-align: center;
+    margin: 2rem auto 0;
+    max-width: 560px;
+  }
+  .booking__note a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-decoration-color: rgba(184,151,58,0.4);
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 720px) {
+    .booking { padding: 2.5rem 0 5rem; }
+    .booking__iframe { min-height: 970px; }
+  }
