@@ -478,10 +478,6 @@
     line-height: 1.85;
     color: var(--mist);
   }
-  .practice__grid--bottom {
-    grid-template-columns: repeat(2, 1fr);
-    border-top: none;
-  }
 
   /* ─── FIVE PHASE FRAMEWORK ───────────────────── */
   .framework { background: var(--ink-mid); }
