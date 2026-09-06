@@ -108,6 +108,51 @@
     border-color: var(--gold) !important;
     color: var(--gold-light) !important;
   }
+  /* Side by side so the bar keeps its height. Gold = paid, outlined = apply. */
+  .nav__cta-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .nav__cta--solid {
+    background: var(--gold) !important;
+    color: var(--ink) !important;
+    border-color: var(--gold) !important;
+  }
+  .nav__cta--solid:hover {
+    background: var(--gold-light) !important;
+    border-color: var(--gold-light) !important;
+    color: var(--ink) !important;
+  }
+  /* Hero secondary: same footprint as .btn-primary, outlined instead of filled */
+  .btn-outline {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--gold);
+    border: 1px solid rgba(184,151,58,0.45);
+    padding: 0.62rem 2rem;
+    transition: all var(--transition);
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+  }
+  /* Line 1 sets up, line 2 carries the weight */
+  .btn-outline__lead {
+    display: block;
+    font-size: 0.63rem;
+    opacity: 0.72;
+    letter-spacing: 0.16em;
+  }
+  .btn-outline__main { display: block; }
   .nav__menu-btn {
     display: none; background: none; border: none;
     cursor: pointer; padding: 0.4rem;
@@ -1398,6 +1443,7 @@
     .nav.scrolled { padding: 0.8rem 1.5rem; }
     .nav__links { display: none; }
     .nav__cta { display: none !important; }
+    .nav__cta-group { display: none !important; }
     .nav__menu-btn { display: flex; }
     .nav__logo-img { height: 44px; }
 
@@ -1471,7 +1517,10 @@
     <li><a href="#words">Testimonials</a></li>
     <li><a href="#questions">Questions</a></li>
   </ul>
-  <a href="#" class="nav__cta" onclick="event.preventDefault(); openConsultModal();">Request a Consultation</a>
+  <div class="nav__cta-group">
+    <a href="#" class="nav__cta" onclick="event.preventDefault(); openConsultModal();">Apply for a Consultation</a>
+    <a href="book-consulting.html" class="nav__cta nav__cta--solid">Schedule a Consultation →</a>
+  </div>
   <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -1488,7 +1537,8 @@
   <a href="#principal" onclick="closeMobileNav()">The Principal</a>
   <a href="#words" onclick="closeMobileNav()">Testimonials</a>
   <a href="#questions" onclick="closeMobileNav()">Questions</a>
-  <a href="#" onclick="event.preventDefault(); closeMobileNav(); openConsultModal();" class="nav__mobile-cta">Request a Consultation →</a>
+  <a href="#" onclick="event.preventDefault(); closeMobileNav(); openConsultModal();" class="nav__mobile-cta">Apply for a Consultation →</a>
+  <a href="book-consulting.html" class="nav__mobile-cta">Schedule a Consultation →</a>
 </div>
 
 <!-- ─── HERO ───────────────────────────────────── -->
@@ -1506,7 +1556,8 @@
       We help founders, executives, and organizational leaders architect scalable infrastructure, aligned leadership, and sustainable enterprise growth — so the organization outgrows founder dependency.
     </p>
     <div class="hero__actions">
-      <a href="#" class="btn-primary" onclick="event.preventDefault(); openConsultModal();">Request a Consultation</a>
+      <a href="book-consulting.html" class="btn-primary">Schedule a Consultation →</a>
+      <a href="#" class="btn-outline" onclick="event.preventDefault(); openConsultModal();"><span class="btn-outline__lead">Apply for a</span><span class="btn-outline__main">Consultation</span></a>
       <a href="#practice" class="btn-ghost">Explore the Practice →</a>
     </div>
     <div class="hero__stats">
@@ -1910,7 +1961,7 @@
   <div class="container">
     <span class="cta-section__eyebrow reveal">The Introduction</span>
     <h2 class="cta-section__headline reveal reveal-delay-1">
-      Request a<br><em>private</em> consultation.
+      Reserve a<br><em>private</em> consultation.
     </h2>
     <p class="cta-section__sub reveal reveal-delay-2">
       A one-hour, confidential conversation. We will map your single greatest scaling constraint and — whether or not there is a fit — you will leave with at least one decision you can act on this week.
@@ -1919,7 +1970,7 @@
     <!-- PRIMARY: Book & Pay -->
     <div class="cta-book reveal reveal-delay-2">
       <a href="book-consulting.html" class="btn-primary cta-book__btn" style="display:inline-block; text-decoration:none;">Schedule Your Consultation →</a>
-      <p class="cta-book__note">Select a time, complete a brief intake, and confirm your session.</p>
+      <p class="cta-book__note">$350 · one hour · credited toward any engagement that follows.</p>
     </div>
 
     <!-- GHL Calendar Modal -->
@@ -1946,7 +1997,7 @@
       <div class="consult-modal__panel">
         <button class="consult-modal__close" onclick="closeConsultModal()" aria-label="Close">✕</button>
         <span class="consult-modal__eyebrow">Private Counsel</span>
-        <p class="consult-modal__heading" id="cm-heading">Request a Consultation</p>
+        <p class="consult-modal__heading" id="cm-heading">Apply for a Consultation</p>
         <p class="consult-modal__sub">A brief introduction, and we will be in touch within one business day.</p>
         <form class="consult-form" id="consultModalForm" novalidate>
           <div class="consult-form__row">
@@ -1981,7 +2032,7 @@
           </div>
           <div class="consult-modal__error" id="cm-error" hidden></div>
           <div class="consult-form__footer">
-            <button type="submit" class="btn-primary consult-form__submit" id="cm-submit">Book Me →</button>
+            <button type="submit" class="btn-primary consult-form__submit" id="cm-submit">Apply →</button>
             <p class="consult-form__note">Confidential. Held in private counsel.</p>
           </div>
         </form>
@@ -2080,7 +2131,7 @@
         <ul class="footer__links">
           <li><a href="tel:+14693312328">(469) 331-2328</a></li>
           <li><a href="mailto:info@thescalableleader.net">info@thescalableleader.net</a></li>
-          <li><a href="#" onclick="event.preventDefault(); openConsultModal();">Request a Consultation</a></li>
+          <li><a href="#" onclick="event.preventDefault(); openConsultModal();">Apply for a Consultation</a></li>
         </ul>
       </div>
       <div>
