@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Pre-session preparation form for The Scalable Leader™ coaching clients.">
+<meta name="theme-color" content="#F5EFE4">
+<title>Pre-Session Preparation — The Scalable Leader™</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="pcf-root">
+
+  <!-- Gold progress bar fills as the user scrolls -->
+  <div class="pcf-progress-bar" id="pcfProgressBar"></div>
+
+  <div class="pcf-wrap">
+
+    <!-- HEADER -->
+    <header class="pcf-header">
+      <p class="pcf-eyebrow">Pre-Session Preparation</p>
+      <h1 class="pcf-main-title">Your Session,<br><em>Prepared.</em></h1>
+      <p class="pcf-subtitle">
+        This form helps us make every minute of your coaching session deeply intentional.
+        Please take 5&ndash;10 quiet minutes with it &mdash; your honesty here shapes the entire conversation.
+      </p>
+      <span class="pcf-privacy-note">Responses are private and reviewed only by your coach</span>
+      <div class="pcf-header-rule"></div>
+    </header>
+
+    <form id="pcfCoachingForm" novalidate>
+
+      <!-- Honeypot: invisible to real visitors, catches bots -->
+      <div class="pcf-honeypot" aria-hidden="true">
+        <label>Leave this blank <input type="text" name="pcf-website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- SECTION 1 -->
+      <section class="pcf-form-section" data-pcf-observe>
+        <div class="pcf-section-head">
+          <span class="pcf-section-num">01</span>
+          <div class="pcf-section-rule"></div>
+        </div>
+        <h2 class="pcf-section-title">A few details to start</h2>
+        <p class="pcf-section-desc">Basic context that connects your responses to your session.</p>
+
+        <div class="pcf-field-row">
+          <div class="pcf-field">
+            <label class="pcf-field-label" for="pcfFirstName">First Name <span class="pcf-req">*</span></label>
+            <input type="text" id="pcfFirstName" name="firstName" placeholder="Your first name" required autocomplete="given-name">
+          </div>
+          <div class="pcf-field">
+            <label class="pcf-field-label" for="pcfLastName">Last Name <span class="pcf-req">*</span></label>
+            <input type="text" id="pcfLastName" name="lastName" placeholder="Your last name" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfEmail">Email Address <span class="pcf-req">*</span></label>
+          <input type="email" id="pcfEmail" name="email" placeholder="The email you used to book" required autocomplete="email">
+          <p class="pcf-field-hint">Used only to match your response to your scheduled session.</p>
+        </div>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfSessionDate">Session Date <span class="pcf-opt">&mdash; if known</span></label>
+          <input type="date" id="pcfSessionDate" name="sessionDate">
+        </div>
+      </section>
+
+      <div class="pcf-divider"></div>
+
+      <!-- SECTION 2 -->
+      <section class="pcf-form-section" data-pcf-observe>
+        <div class="pcf-section-head">
+          <span class="pcf-section-num">02</span>
+          <div class="pcf-section-rule"></div>
+        </div>
+        <h2 class="pcf-section-title">Where you are right now</h2>
+        <p class="pcf-section-desc">No need to make it perfect &mdash; just honest. A real starting point is worth more than a polished one.</p>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfCurrentSituation">Your current situation</label>
+          <textarea id="pcfCurrentSituation" name="currentSituation" placeholder="Describe where you are right now - professionally, personally, or both. What landscape are you navigating?" required></textarea>
+          <p class="pcf-field-hint">A brief snapshot is enough. Context matters more than completeness.</p>
+        </div>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfAlreadyTried">What you&#8217;ve already tried <span class="pcf-opt">&mdash; optional</span></label>
+          <textarea id="pcfAlreadyTried" name="alreadyTried" placeholder="What approaches, strategies, or solutions have you explored? What worked - even partially? What didn't?"></textarea>
+          <p class="pcf-field-hint">This helps your coach skip what you already know and go deeper, faster.</p>
+        </div>
+      </section>
+
+      <div class="pcf-divider"></div>
+
+      <!-- SECTION 3 -->
+      <section class="pcf-form-section" data-pcf-observe>
+        <div class="pcf-section-head">
+          <span class="pcf-section-num">03</span>
+          <div class="pcf-section-rule"></div>
+        </div>
+        <h2 class="pcf-section-title">The question at the center</h2>
+        <p class="pcf-section-desc">If you could only ask one thing, what would it be? Take a moment here &mdash; this one matters most.</p>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfCoreQuestion">Your core question</label>
+          <textarea id="pcfCoreQuestion" name="coreQuestion" class="pcf-tall" placeholder="State your most important question as clearly and specifically as possible. The more precise, the more powerful the session." required></textarea>
+          <p class="pcf-field-hint">Avoid broad questions like &#8220;how do I grow?&#8221; &mdash; instead: &#8220;How do I decide where to direct my capital and energy right now &mdash; between growing what I have, protecting it, or pursuing an entirely new opportunity?&#8221;</p>
+        </div>
+      </section>
+
+      <div class="pcf-divider"></div>
+
+      <!-- SECTION 4 -->
+      <section class="pcf-form-section" data-pcf-observe>
+        <div class="pcf-section-head">
+          <span class="pcf-section-num">04</span>
+          <div class="pcf-section-rule"></div>
+        </div>
+        <h2 class="pcf-section-title">What a breakthrough looks like</h2>
+        <p class="pcf-section-desc">Orienting around a clear outcome lets your coach direct the session with intention.</p>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfOneThing">If we solve one thing today</label>
+          <textarea id="pcfOneThing" name="oneThing" placeholder="If this session could only move the needle on one thing - what would make the biggest difference in your life or work?" required></textarea>
+          <p class="pcf-field-hint">Be ruthlessly specific. What would change immediately if this were resolved?</p>
+        </div>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfSuccessOutcome">What success feels like</label>
+          <textarea id="pcfSuccessOutcome" name="successOutcome" placeholder="After our session ends, what would need to be true for you to feel it was truly worth your time?" required></textarea>
+          <p class="pcf-field-hint">Describe the feeling, the clarity, or the specific action you&#8217;d take after leaving.</p>
+        </div>
+      </section>
+
+      <div class="pcf-divider"></div>
+
+      <!-- SECTION 5 -->
+      <section class="pcf-form-section" data-pcf-observe>
+        <div class="pcf-section-head">
+          <span class="pcf-section-num">05</span>
+          <div class="pcf-section-rule"></div>
+        </div>
+        <h2 class="pcf-section-title">Anything else? <em style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:1.3rem;">&mdash; Optional</em></h2>
+        <p class="pcf-section-desc">This is your space. Use it if something doesn&#8217;t fit above &mdash; or leave it blank. Both are perfectly fine.</p>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfBlockers">Current blockers or concerns <span class="pcf-opt">&mdash; optional</span></label>
+          <textarea id="pcfBlockers" name="blockers" placeholder="What's getting in your way? Fear, resources, clarity, team, timing - what feels like the biggest friction point right now?"></textarea>
+          <p class="pcf-field-hint">You don&#8217;t have to have the answers &mdash; just name what&#8217;s in the way.</p>
+        </div>
+
+        <div class="pcf-field">
+          <label class="pcf-field-label" for="pcfCoachContext">Anything for your coach to know <span class="pcf-opt">&mdash; optional</span></label>
+          <textarea id="pcfCoachContext" name="coachContext" placeholder="Context, sensitivities, things that didn't fit above - anything that would help your coach show up fully prepared for you."></textarea>
+          <p class="pcf-field-hint">This is read before your session. Share as much or as little as you&#8217;d like.</p>
+        </div>
+      </section>
+
+      <div class="pcf-divider"></div>
+
+      <!-- SUBMIT -->
+      <div class="pcf-submit-wrap" id="pcfSubmitWrap" data-pcf-observe>
+        <p class="pcf-submit-pretext">You&#8217;re one step away from a focused, powerful session.</p>
+        <button type="submit" class="pcf-submit-btn" id="pcfSubmitBtn">
+          <span id="pcfBtnText">Prepare My Session</span>
+          <span class="pcf-btn-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <p class="pcf-error" id="pcfError">
+          Something didn&#8217;t go through. Please check your connection and try again &mdash; your answers are still here.
+        </p>
+        <p class="pcf-reassurance">
+          <strong>Your responses are confidential</strong> &mdash; reviewed only by your coach before the session.<br>
+          No information is shared with third parties.
+        </p>
+      </div>
+
+    </form>
+
+    <!-- SUCCESS STATE — premium thank-you, shown inline after submit -->
+    <div id="pcfSuccessState" aria-live="polite" style="display:none;">
+      <div id="ty-root">
+        <div class="ty-wrap">
+          <div class="ty-top-rule"></div>
+          <div class="ty-ring" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M6 14L12 20L22 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="ty-eyebrow">Pre-Session Preparation</p>
+          <h1 class="ty-title">Session<br><em>Prepared.</em></h1>
+          <div class="ty-rule"></div>
+          <p class="ty-body">
+            Your responses have been received and are in safe hands.
+            Your coach will review everything carefully before your session begins &mdash;
+            so you can arrive ready to go deep.
+          </p>
+          <div class="ty-next">
+            <p class="ty-next-label">What happens next</p>
+            <ul class="ty-steps">
+              <li>
+                <span class="ty-step-num">01</span>
+                <span class="ty-step-text">Your coach reviews your answers before the session</span>
+              </li>
+              <li>
+                <span class="ty-step-num">02</span>
+                <span class="ty-step-text">You&#8217;ll receive a confirmation or any prep notes by email</span>
+              </li>
+              <li>
+                <span class="ty-step-num">03</span>
+                <span class="ty-step-text">Show up as yourself &mdash; the work has already begun</span>
+              </li>
+            </ul>
+          </div>
+          <p class="ty-closing"><em>We look forward to a powerful conversation.</em></p>
+          <div class="ty-bottom-rule"></div>
+          <p class="ty-privacy">Your responses are private and reviewed only by your coach.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pcf-wrap -->
+</div><!-- /pcf-root -->
+
+<script>
+(function () {
+
+  /* ================================================================
+     STEP 1: Replace the URL below with your GHL Inbound Webhook URL.
+     You get this URL from:
+     GHL -> Automation -> your workflow -> Inbound Webhook -> copy URL
+     ================================================================ */
+  var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/4IGscxD8pgryhXoUw2Lv/webhook-trigger/22b773b6-95b1-4eed-8359-41467eddd8d4';
+
+  /* ================================================================
+     STEP 2: Replace the URL below with your GHL Thank You page URL.
+     You get this URL from:
+     GHL -> your funnel -> Thank You step -> click the step to see its URL
+     Example: https://yoursite.com/thank-you
+     ================================================================ */
+  /* ================================================================
+     STEP 2 (optional): Replace the URL below with your Google Apps
+     Script web app URL to log every submission to a Google Sheet.
+     Deploy the script from Forms-QnA/sheets-webhook.gs, copy the
+     web app URL it gives you, and paste it here.
+     Leave the placeholder as-is to skip Google Sheets logging.
+     ================================================================ */
+  var SHEETS_URL = 'PASTE_GOOGLE_APPS_SCRIPT_URL_HERE';
+  /* ================================================================ */
+
+  /* ------------------------------------------------------------------
+     Inject CSS via JavaScript so GHL cannot strip it on save
+     ------------------------------------------------------------------ */
+  var css = [
+    '#pcf-root{',
+      '--pcf-bg:#F5EFE4;--pcf-surface:#FFFFFF;--pcf-text:#0D0B09;',
+      '--pcf-text-sec:#3A2E24;--pcf-text-muted:#6A5A4A;--pcf-border:#C8B49A;',
+      '--pcf-gold:#9A7830;--pcf-gold-light:#EDE0C8;--pcf-gold-subtle:#FAF3E4;',
+      '--pcf-font-display:"Cormorant Garamond",Georgia,serif;',
+      '--pcf-font-body:"Plus Jakarta Sans",system-ui,sans-serif;',
+      '--pcf-ease-out:cubic-bezier(0,0,0.2,1);',
+      '--pcf-ease-io:cubic-bezier(0.4,0,0.2,1);',
+      'font-family:var(--pcf-font-body);background-color:var(--pcf-bg);',
+      'color:var(--pcf-text);position:relative;overflow-x:hidden;',
+    '}',
+    '#pcf-root::before{',
+      'content:"";position:absolute;inset:0;pointer-events:none;z-index:0;',
+      'background-image:',
+        'radial-gradient(ellipse at 15% 10%,hsla(38,55%,88%,0.55) 0px,transparent 55%),',
+        'radial-gradient(ellipse at 85% 85%,hsla(30,35%,90%,0.45) 0px,transparent 55%);',
+    '}',
+    '.pcf-progress-bar{position:fixed;top:0;left:0;height:2px;',
+      'background:linear-gradient(90deg,var(--pcf-gold) 0%,#D4AC6A 100%);',
+      'width:0%;transition:width 400ms var(--pcf-ease-io);z-index:9999;}',
+    '.pcf-wrap{position:relative;z-index:1;max-width:660px;margin:0 auto;padding:5rem 1.5rem 7rem;}',
+
+    /* Header */
+    '.pcf-header{text-align:center;margin-bottom:5rem;opacity:0;',
+      'animation:pcfFadeUp 900ms var(--pcf-ease-out) 120ms forwards;}',
+    '.pcf-eyebrow{font-family:var(--pcf-font-body);font-size:0.68rem;font-weight:500;',
+      'letter-spacing:0.2em;text-transform:uppercase;color:var(--pcf-gold);margin-bottom:1.25rem;}',
+    '.pcf-main-title{font-family:var(--pcf-font-display);font-size:clamp(2.4rem,6vw,3.4rem);',
+      'font-weight:500;line-height:1.08;letter-spacing:-0.015em;color:var(--pcf-text);margin-bottom:1.4rem;}',
+    '.pcf-main-title em{font-style:italic;color:var(--pcf-gold);}',
+    '.pcf-subtitle{font-size:0.98rem;line-height:1.78;color:var(--pcf-text-sec);font-weight:300;',
+      'max-width:460px;margin:0 auto 1.5rem;}',
+    '.pcf-privacy-note{display:inline-flex;align-items:center;gap:0.6rem;',
+      'font-size:0.75rem;color:var(--pcf-text-muted);}',
+    '.pcf-privacy-note::before,.pcf-privacy-note::after{content:"";display:block;',
+      'width:28px;height:1px;background:var(--pcf-border);}',
+    '.pcf-header-rule{width:36px;height:1px;margin:1.5rem auto 0;',
+      'background:linear-gradient(90deg,transparent,var(--pcf-gold),transparent);}',
+
+    /* Sections */
+    '.pcf-form-section{opacity:0;transform:translateY(28px);',
+      'transition:opacity 700ms var(--pcf-ease-out),transform 700ms var(--pcf-ease-out);}',
+    '.pcf-form-section.pcf-in-view{opacity:1;transform:translateY(0);}',
+    '.pcf-section-head{display:flex;align-items:center;gap:1rem;margin-bottom:0.6rem;}',
+    '.pcf-section-num{font-family:var(--pcf-font-display);font-size:0.8rem;font-weight:600;',
+      'font-style:italic;color:var(--pcf-gold);letter-spacing:0.06em;flex-shrink:0;}',
+    '.pcf-section-rule{flex:1;height:1px;',
+      'background:linear-gradient(90deg,var(--pcf-border) 0%,transparent 100%);}',
+    '.pcf-section-title{font-family:var(--pcf-font-display);font-size:1.65rem;font-weight:500;',
+      'letter-spacing:-0.01em;margin-bottom:0.45rem;}',
+    '.pcf-section-desc{font-size:0.855rem;color:var(--pcf-text-muted);line-height:1.65;',
+      'font-weight:300;margin-bottom:2rem;}',
+
+    /* Fields */
+    '.pcf-field{margin-bottom:1.9rem;}',
+    '.pcf-field-label{display:block;font-size:0.74rem;font-weight:500;letter-spacing:0.09em;',
+      'text-transform:uppercase;color:var(--pcf-text-sec);margin-bottom:0.6rem;}',
+    '.pcf-opt{font-size:0.7rem;font-weight:300;letter-spacing:0.03em;',
+      'text-transform:none;color:var(--pcf-text-muted);}',
+    '.pcf-req{color:var(--pcf-gold);margin-left:3px;font-size:0.8rem;}',
+    '#pcf-root input[type="text"],#pcf-root input[type="email"],',
+    '#pcf-root input[type="date"],#pcf-root textarea{',
+      'width:100%;font-family:var(--pcf-font-body);font-size:0.97rem;font-weight:300;',
+      'color:var(--pcf-text);background:var(--pcf-surface);border:1.5px solid var(--pcf-border);',
+      'border-radius:5px;padding:0.88rem 1.1rem;line-height:1.65;box-sizing:border-box;',
+      '-webkit-appearance:none;appearance:none;',
+      'transition:border-color 250ms ease,box-shadow 250ms ease,background 250ms ease;}',
+    '#pcf-root input[type="text"]:focus,#pcf-root input[type="email"]:focus,',
+    '#pcf-root input[type="date"]:focus,#pcf-root textarea:focus{',
+      'outline:none;border-color:var(--pcf-gold);background:var(--pcf-gold-subtle);',
+      'box-shadow:0 0 0 3.5px rgba(184,148,74,0.1);}',
+    '#pcf-root input::placeholder,#pcf-root textarea::placeholder{',
+      'color:#B09678;font-weight:300;font-style:italic;}',
+    '#pcf-root textarea{resize:vertical;min-height:118px;}',
+    '#pcf-root textarea.pcf-tall{min-height:148px;}',
+    '.pcf-field-hint{margin-top:0.5rem;font-size:0.76rem;color:var(--pcf-text-muted);',
+      'line-height:1.65;font-weight:300;padding-left:2px;}',
+    '.pcf-field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}',
+    '.pcf-divider{height:1px;margin:3.5rem 0;',
+      'background:linear-gradient(90deg,transparent 0%,var(--pcf-border) 30%,var(--pcf-border) 70%,transparent 100%);}',
+
+    /* Honeypot */
+    '.pcf-honeypot{position:absolute;left:-9999px;width:1px;height:1px;',
+      'overflow:hidden;opacity:0;pointer-events:none;}',
+
+    /* Error */
+    '.pcf-error{display:none;margin-top:1rem;font-size:0.82rem;color:#A04030;',
+      'text-align:center;line-height:1.65;}',
+
+    /* Submit */
+    '.pcf-submit-wrap{text-align:center;padding-top:1.5rem;opacity:0;transform:translateY(28px);',
+      'transition:opacity 700ms var(--pcf-ease-out),transform 700ms var(--pcf-ease-out);}',
+    '.pcf-submit-wrap.pcf-in-view{opacity:1;transform:translateY(0);}',
+    '.pcf-submit-pretext{font-family:var(--pcf-font-display);font-size:1.2rem;font-style:italic;',
+      'color:var(--pcf-text-sec);margin-bottom:1.6rem;font-weight:400;line-height:1.5;}',
+    '.pcf-submit-btn{display:inline-flex;align-items:center;gap:0.7rem;',
+      'padding:0.88rem 2.8rem;font-family:var(--pcf-font-body);font-size:0.78rem;',
+      'font-weight:500;letter-spacing:0.15em;text-transform:uppercase;',
+      'color:var(--pcf-surface);background:var(--pcf-text);border:1.5px solid var(--pcf-text);',
+      'border-radius:4px;cursor:pointer;position:relative;overflow:hidden;',
+      'transition:transform 280ms var(--pcf-ease-out),box-shadow 280ms ease,border-color 280ms ease;}',
+    '.pcf-submit-btn::before{content:"";position:absolute;inset:0;opacity:0;',
+      'background:linear-gradient(135deg,var(--pcf-gold) 0%,#D4AC6A 100%);',
+      'transition:opacity 380ms ease;}',
+    '.pcf-submit-btn:hover::before{opacity:1;}',
+    '.pcf-submit-btn:hover{border-color:var(--pcf-gold);transform:translateY(-2px);',
+      'box-shadow:0 10px 28px rgba(184,148,74,0.28);}',
+    '.pcf-submit-btn:active{transform:translateY(0);}',
+    '.pcf-submit-btn:disabled{cursor:default;opacity:0.7;transform:none;}',
+    '.pcf-submit-btn > *{position:relative;z-index:1;}',
+    '.pcf-btn-arrow{transition:transform 300ms ease;display:inline-block;}',
+    '.pcf-submit-btn:hover .pcf-btn-arrow{transform:translateX(4px);}',
+    '.pcf-reassurance{margin-top:1.3rem;font-size:0.76rem;color:var(--pcf-text-muted);line-height:1.75;}',
+    '.pcf-reassurance strong{font-weight:500;color:var(--pcf-text-sec);}',
+
+    /* Premium thank-you state */
+    '#ty-root{',
+      '--ty-bg:#F5EFE4;--ty-surface:#FFFFFF;--ty-text:#0D0B09;',
+      '--ty-text-sec:#3A2E24;--ty-text-muted:#6A5A4A;--ty-border:#C8B49A;',
+      '--ty-gold:#9A7830;',
+      '--ty-font-display:"Cormorant Garamond",Georgia,serif;',
+      '--ty-font-body:"Plus Jakarta Sans",system-ui,sans-serif;',
+      '--ty-ease-out:cubic-bezier(0,0,0.2,1);',
+      'font-family:var(--ty-font-body);background-color:var(--ty-bg);',
+      'color:var(--ty-text);min-height:60vh;display:flex;',
+      'align-items:center;justify-content:center;',
+    '}',
+    '.ty-wrap{',
+      'position:relative;z-index:1;max-width:560px;width:100%;',
+      'margin:0 auto;padding:4rem 2rem 5rem;text-align:center;',
+      'opacity:0;animation:tyFadeUp 900ms var(--ty-ease-out) 80ms forwards;',
+    '}',
+    '.ty-top-rule{width:1px;height:64px;',
+      'background:linear-gradient(180deg,transparent,var(--ty-gold));',
+      'margin:0 auto 2.5rem;}',
+    '.ty-ring{width:64px;height:64px;border-radius:50%;',
+      'border:1.5px solid var(--ty-gold);',
+      'display:flex;align-items:center;justify-content:center;',
+      'margin:0 auto 2rem;color:var(--ty-gold);',
+      'animation:tyPulse 2.5s ease-in-out 1s infinite;}',
+    '.ty-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;',
+      'text-transform:uppercase;color:var(--ty-gold);margin-bottom:1.4rem;}',
+    '.ty-title{font-family:var(--ty-font-display);font-size:clamp(3rem,8vw,4.8rem);',
+      'font-weight:500;line-height:1.0;letter-spacing:-0.02em;',
+      'color:var(--ty-text);margin-bottom:1.8rem;}',
+    '.ty-title em{font-style:italic;color:var(--ty-gold);}',
+    '.ty-rule{width:48px;height:1px;',
+      'background:linear-gradient(90deg,transparent,var(--ty-gold),transparent);',
+      'margin:0 auto 2rem;}',
+    '.ty-body{font-size:1rem;line-height:1.85;color:var(--ty-text-sec);',
+      'font-weight:300;max-width:420px;margin:0 auto 3rem;}',
+    '.ty-next{border:1px solid var(--ty-border);border-radius:8px;',
+      'padding:2rem 2rem 1.5rem;margin-bottom:2.5rem;',
+      'text-align:left;background:var(--ty-surface);}',
+    '.ty-next-label{font-size:0.68rem;font-weight:500;letter-spacing:0.15em;',
+      'text-transform:uppercase;color:var(--ty-gold);margin-bottom:1.4rem;}',
+    '.ty-steps{list-style:none;padding:0;margin:0;}',
+    '.ty-steps li{display:flex;align-items:flex-start;gap:1rem;',
+      'padding:0.85rem 0;border-bottom:1px solid var(--ty-border);}',
+    '.ty-steps li:last-child{border-bottom:none;padding-bottom:0;}',
+    '.ty-step-num{font-family:var(--ty-font-display);font-size:0.78rem;',
+      'font-style:italic;color:var(--ty-gold);letter-spacing:0.06em;',
+      'flex-shrink:0;padding-top:2px;}',
+    '.ty-step-text{font-size:0.88rem;line-height:1.65;',
+      'color:var(--ty-text-sec);font-weight:300;}',
+    '.ty-closing{font-family:var(--ty-font-display);font-size:1.25rem;',
+      'font-style:italic;color:var(--ty-text-sec);font-weight:400;',
+      'line-height:1.6;margin-bottom:2.5rem;}',
+    '.ty-bottom-rule{width:1px;height:48px;',
+      'background:linear-gradient(180deg,var(--ty-gold),transparent);',
+      'margin:0 auto 1.5rem;}',
+    '.ty-privacy{font-size:0.73rem;color:var(--ty-text-muted);letter-spacing:0.04em;}',
+    '@keyframes tyFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}',
+    '@keyframes tyPulse{0%,100%{box-shadow:0 0 0 0 rgba(154,120,48,0)}50%{box-shadow:0 0 0 8px rgba(154,120,48,0.15)}}',
+    '@media(max-width:560px){.ty-wrap{padding:3.5rem 1.25rem 4rem;}.ty-title{font-size:3rem;}.ty-next{padding:1.5rem 1.25rem;}}',
+
+    /* Animation */
+    '@keyframes pcfFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}',
+
+    /* Mobile */
+    '@media(max-width:580px){',
+      '.pcf-wrap{padding:3.5rem 1.25rem 5rem;}',
+      '.pcf-main-title{font-size:2.1rem;}',
+      '.pcf-field-row{grid-template-columns:1fr;}',
+    '}',
+
+    /* Reduced motion */
+    '@media(prefers-reduced-motion:reduce){',
+      '#pcf-root *,#pcf-root *::before,#pcf-root *::after{',
+        'animation-duration:0.01ms!important;transition-duration:0.01ms!important;}',
+      '.pcf-form-section,.pcf-submit-wrap{opacity:1;transform:none;}',
+      '.pcf-header{opacity:1;animation:none;}',
+    '}'
+  ].join('');
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
+
+  /* ------------------------------------------------------------------
+     Wire up interactions
+     ------------------------------------------------------------------ */
+  var root      = document.getElementById('pcf-root');
+  var bar       = document.getElementById('pcfProgressBar');
+  var form      = document.getElementById('pcfCoachingForm');
+  var btn       = document.getElementById('pcfSubmitBtn');
+  var btnText   = document.getElementById('pcfBtnText');
+  var errorMsg  = document.getElementById('pcfError');
+  var successEl = document.getElementById('pcfSuccessState');
+
+  /* Progress bar */
+  window.addEventListener('scroll', function () {
+    var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+
+  /* Scroll-reveal */
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        setTimeout(function () { e.target.classList.add('pcf-in-view'); }, 80);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+
+  root.querySelectorAll('[data-pcf-observe]').forEach(function (el) {
+    observer.observe(el);
+  });
+
+  /* Auto-grow textareas */
+  root.querySelectorAll('textarea').forEach(function (ta) {
+    ta.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight + 2) + 'px';
+    });
+    ta.addEventListener('focus', function () {
+      if (!this.style.height) this.style.height = (this.scrollHeight + 2) + 'px';
+    });
+  });
+
+  /* Form submit */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* Honeypot check */
+    var honey = form.querySelector('input[name="pcf-website"]');
+    if (honey && honey.value.trim() !== '') return;
+
+    /* HTML5 validation */
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    /* Loading state */
+    btn.disabled = true;
+    btnText.textContent = 'Sending…';
+    errorMsg.style.display = 'none';
+
+    var payload = {
+      form_name:         'pre_coaching_questions',
+      submitted_at:      new Date().toISOString(),
+      first_name:        (form.firstName.value        || '').trim(),
+      last_name:         (form.lastName.value         || '').trim(),
+      email:             (form.email.value            || '').trim(),
+      session_date:      (form.sessionDate.value      || '').trim(),
+      current_situation: (form.currentSituation.value || '').trim(),
+      already_tried:     (form.alreadyTried.value     || '').trim(),
+      core_question:     (form.coreQuestion.value     || '').trim(),
+      one_thing:         (form.oneThing.value         || '').trim(),
+      success_outcome:   (form.successOutcome.value   || '').trim(),
+      blockers:          (form.blockers.value         || '').trim(),
+      coach_context:     (form.coachContext.value     || '').trim()
+    };
+
+    /* Demo mode: if webhook not configured yet, just show success */
+    if (!WEBHOOK_URL || WEBHOOK_URL === 'PASTE_GHL_INBOUND_WEBHOOK_HERE') {
+      showSuccess(); return;
+    }
+
+    /* Fire to Google Sheets in parallel (fire-and-forget, does not affect success/error state) */
+    if (SHEETS_URL && SHEETS_URL !== 'PASTE_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      fetch(SHEETS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      }).catch(function () {});
+    }
+
+    /* Primary: send to GHL — success/error state is based on this response only */
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function (res) { res.ok ? showSuccess() : showError(); })
+    .catch(showError);
+  });
+
+  function showSuccess() {
+    bar.style.width = '100%';
+    form.style.transition = 'opacity 450ms ease';
+    form.style.opacity = '0';
+    setTimeout(function () {
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 450);
+  }
+
+  function showError() {
+    btn.disabled = false;
+    btnText.textContent = 'Prepare My Session';
+    errorMsg.style.display = 'block';
+  }
+
+}());
+</script>
+
+</body>
+</html>

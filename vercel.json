@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/pre-coaching-page", "destination": "/pre-coaching-page.html" }
+  ]
+}
