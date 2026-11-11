@@ -1,5 +1,14 @@
 {
-  "rewrites": [
-    { "source": "/pre-coaching-page", "destination": "/pre-coaching-page.html" }
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/landing-page", "destination": "https://grow.thescalableleader.net/pre-coaching", "permanent": false },
+    { "source": "/pre-coaching", "destination": "https://grow.thescalableleader.net/pre-coaching", "permanent": false },
+    { "source": "/pre-coaching-page", "destination": "https://grow.thescalableleader.net/pre-coaching", "permanent": false },
+    { "source": "/contactpage", "destination": "/contact", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/book-a-call", "destination": "/book-consulting", "permanent": true },
+    { "source": "/book-coaching", "destination": "/book-consulting", "permanent": false },
+    { "source": "/apply", "destination": "/contact", "permanent": false }
   ]
 }

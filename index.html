@@ -1501,6 +1501,7 @@
     .cal-modal__panel { width: 98%; }
   }
 </style>
+  <script src="js/attribution.js"></script>
 </head>
 <body>
 
@@ -2274,7 +2275,8 @@
       source: 'index.html#inquiry-form',
       submittedAt: new Date().toISOString(),
       pageUrl: window.location.href,
-      userAgent: navigator.userAgent
+      userAgent: navigator.userAgent,
+      ...(window.tslAttribution ? window.tslAttribution() : {})
     };
 
     btn.disabled = true;
@@ -2384,7 +2386,8 @@
         source: 'index.html#consult-modal',
         submittedAt: new Date().toISOString(),
         pageUrl: window.location.href,
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
+        ...(window.tslAttribution ? window.tslAttribution() : {})
       };
 
       submitBtn.disabled = true;

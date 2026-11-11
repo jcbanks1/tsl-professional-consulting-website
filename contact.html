@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+  <script src="js/attribution.js"></script>
 </head>
 <body>
 <nav class="nav" id="nav">
@@ -135,9 +136,9 @@
     </div>
 
 <script>
-  // GHL inbound webhook — replace the placeholder below with the URL from the user's GHL workflow trigger.
-  // The workflow handles Create/Update Contact + Add Tag ("Website Contact Form") + custom fields for consent.
-  const GHL_WEBHOOK = 'REPLACE_WITH_GHL_INBOUND_WEBHOOK_URL';
+  // Same GHL inbound webhook as the homepage forms (workflow: TSL-WEBSITE LEAD INTAKE).
+  // The tag and source fields tell the workflow which form sent the lead.
+  const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/4IGscxD8pgryhXoUw2Lv/webhook-trigger/9a88ebab-5f12-45da-9c1b-7c83bfcf795b';
   const CONSENT_LANG_VERSION = '2026-06';
   const FORM_TAG = 'Website Contact Form';
   const REDIRECT_DELAY_MS = 3000;
@@ -189,7 +190,8 @@
       source: 'contact.html',
       submittedAt: new Date().toISOString(),
       userAgent: navigator.userAgent,
-      pageUrl: window.location.href
+      pageUrl: window.location.href,
+      ...(window.tslAttribution ? window.tslAttribution() : {})
     };
 
     const controller = new AbortController();
